@@ -70,16 +70,36 @@ Server läuft auf `http://localhost:8080`
 
 ## Deployment
 
-### Railway
+### Server
 
-1. Push zu GitHub
-2. Railway Projekt erstellen
-3. Environment Variables setzen
-4. Deploy
+1. Repository klonen
+2. Python 3.9+ installieren (falls nicht vorhanden)
+3. Dependencies installieren: `pip install -r requirements.txt`
+4. `.env` Datei mit Credentials anlegen
+5. Server starten: `python api_server.py`
 
-Start Command: `python api_server.py`
+Der Server läuft standardmäßig auf Port 8080. Port kann via `PORT` Environment Variable geändert werden.
 
-### Docker
+### Mit Systemd (Linux)
+
+```ini
+[Unit]
+Description=Financial Agents API
+After=network.target
+
+[Service]
+User=www-data
+WorkingDirectory=/path/to/backend
+Environment="PATH=/path/to/venv/bin"
+EnvironmentFile=/path/to/backend/.env
+ExecStart=/path/to/venv/bin/python api_server.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
+### Mit Docker (optional)
 
 ```dockerfile
 FROM python:3.11-slim
