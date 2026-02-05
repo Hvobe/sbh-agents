@@ -2,6 +2,8 @@
 Support Agent - Hauptlogik
 BörsennewsApp Support Agent mit FAQ-basierter Antwortgenerierung
 """
+from __future__ import annotations
+
 import numpy as np
 from shared.database import get_supabase
 from shared.llm_client import (

@@ -2,6 +2,8 @@
 LLM Client
 Abstraction Layer für OpenAI GPT
 """
+from __future__ import annotations
+
 import os
 import json
 import time

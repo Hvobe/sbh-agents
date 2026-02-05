@@ -2,6 +2,8 @@
 Financial Agents API Server
 FastAPI Backend - Support Agent
 """
+from __future__ import annotations
+
 import os
 from datetime import datetime
 from fastapi import FastAPI, HTTPException

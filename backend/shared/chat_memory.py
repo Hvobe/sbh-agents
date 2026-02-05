@@ -1,6 +1,8 @@
 """
 Chat Memory Utilities
 """
+from __future__ import annotations
+
 from .config import MAX_RECENT_MESSAGES, MAX_OLDER_MESSAGES
 
 

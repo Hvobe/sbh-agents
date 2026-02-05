@@ -2,6 +2,8 @@
 Pydantic Models
 Gemeinsame Datenmodelle für API Requests und Responses
 """
+from __future__ import annotations
+
 from typing import Any
 from pydantic import BaseModel
 

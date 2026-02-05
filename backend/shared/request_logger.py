@@ -2,6 +2,7 @@
 Request Logger
 Speichert alle Agent-Requests in der Datenbank für Monitoring.
 """
+from __future__ import annotations
 
 from .database import get_supabase
 from .debug_tracker import DebugTracker

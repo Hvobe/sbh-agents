@@ -2,6 +2,8 @@
 Debug Tracker für Observability
 Trackt Timing, Tokens und Kosten für jeden Request
 """
+from __future__ import annotations
+
 import time
 import uuid
 from datetime import datetime
