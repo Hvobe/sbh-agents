@@ -4,18 +4,27 @@ AI-basierter Support Agent.
 
 ## Setup
 
-### 1. Dependencies installieren
+### 1. PostgreSQL Datenbank einrichten
 
 ```bash
-cd backend
+# Datenbank erstellen
+createdb financial_agents
+
+# Schema importieren
+psql financial_agents < schema.sql
+```
+
+### 2. Dependencies installieren
+
+```bash
 pip install -r requirements.txt
 ```
 
-### 2. Environment Variables
+### 3. Environment Variables
 
 Die `.env` Datei wird separat bereitgestellt.
 
-### 3. Server starten
+### 4. Server starten
 
 ```bash
 python api_server.py
@@ -23,7 +32,7 @@ python api_server.py
 
 Server läuft auf `http://localhost:8080`
 
-### 4. Testen ob es läuft
+### 5. Testen ob es läuft
 
 ```bash
 # Health Check
@@ -68,4 +77,5 @@ CMD ["python", "api_server.py"]
 ## Anforderungen
 
 - Python 3.9+
+- PostgreSQL 14+ (mit pgvector Extension)
 - Internetzugang (für OpenAI API)

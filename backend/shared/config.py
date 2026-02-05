@@ -37,8 +37,7 @@ PRICING = {
 # =============================================================================
 # Database Configuration
 # =============================================================================
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+DATABASE_URL = os.getenv("DATABASE_URL")
 FAQ_TABLE = os.getenv("FAQ_TABLE", "documents")
 
 
@@ -55,7 +54,7 @@ def validate_config() -> None:
     """
     Prüft ob alle erforderlichen Umgebungsvariablen gesetzt sind.
     """
-    required = ["OPENAI_API_KEY", "SUPABASE_URL", "SUPABASE_KEY"]
+    required = ["OPENAI_API_KEY", "DATABASE_URL"]
     missing = [var for var in required if not os.getenv(var)]
 
     if missing:
