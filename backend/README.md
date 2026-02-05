@@ -34,6 +34,18 @@ python api_server.py
 
 Server läuft auf `http://localhost:8080`
 
+### 4. Testen ob es läuft
+
+```bash
+# Health Check
+curl http://localhost:8080/health
+
+# Chat testen
+curl -X POST http://localhost:8080/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "Hallo", "agent": "support"}'
+```
+
 ## API Endpoints
 
 | Endpoint | Method | Beschreibung |
